@@ -12,12 +12,21 @@ func getIntInputArray(from str: String) -> [Int] {
         .compactMap { Int($0) }
 }
 
+func getIntInputArray(fromResourceWithName name: String, andExtension fileExtension: String?) -> [Int] {
+    guard let url = Bundle.module.url(forResource: name, withExtension: fileExtension),
+          let data = try? Data(contentsOf: url),
+          let str = String(data: data, encoding: .utf8) else {
+        fatalError("Unable to get input data")
+    }
+    return str.split(separator: "\n")
+        .compactMap { Int($0) }
+}
 
 func getIntInputArray(from url: URL) -> [Int] {
     guard let data = try? Data(contentsOf: url),
           let str = String(data: data, encoding: .utf8) else {
         fatalError("Unable to fetch input data from \(url)")
     }
-
+    
     return getIntInputArray(from: str)
 }
