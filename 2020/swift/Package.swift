@@ -21,7 +21,8 @@ let package = Package(
         .target(
             name: "adventofcode2020",
             dependencies: [],
-            resources: [.process("Resources/input_day1.txt")]),
+            resources: [.process("Resources/input_day1.txt"),
+                        .process("Resources/input_day2.txt")]),
         .testTarget(
             name: "adventofcode2020Tests",
             dependencies: ["adventofcode2020"]),
