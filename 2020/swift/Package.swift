@@ -22,7 +22,10 @@ let package = Package(
             name: "adventofcode2020",
             dependencies: [],
             resources: [.process("Resources/input_day1.txt"),
-                        .process("Resources/input_day2.txt")]),
+                        .process("Resources/input_day2.txt"),
+                        .process("Resources/input_day3.txt"),
+                        .process("Resources/input_day4.txt"),
+                        .process("Resources/input_day8.txt")]),
         .testTarget(
             name: "adventofcode2020Tests",
             dependencies: ["adventofcode2020"]),

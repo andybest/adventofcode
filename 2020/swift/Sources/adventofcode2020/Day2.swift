@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 struct PasswordInput {
     let requiredLetter: Character
     let rangeRequirement: Range<Int>
